@@ -10,18 +10,6 @@
 
 ### [Requirements](requirements.txt)
 
-scipy==1.4.1
-numpy==1.18.5
-tqdm==4.56.0
-catch22== 0.1.0
-numba==0.50.1
-matplotlib==3.3.4
-pandas==1.2.3
-sktime==0.4.3
-tensorflow-gpu==2.3.0
-scikit_learn==0.24.1
-tbb==2021.2.0
-
 * Python;
 * Matplotlib
 * Numba;
