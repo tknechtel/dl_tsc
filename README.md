@@ -41,7 +41,7 @@ Arguments:
 
 Examples:
 > python main.py
-> python main.py -d Adiac Coffee -c rocket_tf mlp -i 1
+> python main.py -d Adiac Coffee -c multirocket_default -i 1
 > python main.py -g True
 ```
 The framework expects data from the UCR archive in the .ts format.
