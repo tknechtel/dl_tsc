@@ -1,6 +1,6 @@
-# dl_time_series_class
+# dl_tsc
 
-***Deep Learning for time series data: A survey and experimental study***
+***Deep Learning for time series classification - A review and experimental study***
 
 ## Results
 
