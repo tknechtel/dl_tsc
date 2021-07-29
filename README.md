@@ -21,6 +21,12 @@
 * TensorFlow-GPU;
 * tqdm.
 
+## Code
+The code is divided as follows: 
+* The [main.py](https://github.com/tknechtel/dl_tsc/blob/main/main.py) python file contains the necessary code to run an experiement. 
+* The [utils](https://github.com/tknechtel/dl_tsc/blob/main/utils) folder contains the necessary functions to read the datasets and visualize the plots.
+* The [classifiers](https://github.com/tknechtel/dl_tsc/tree/main/models) folder contains the different classifiers including: Rocket, MiniRocket, MultiRocket, InceptionTime, ResNet...
+
 ## Usage
 
 ### [`main.py`](main.py)
@@ -52,3 +58,6 @@ Results are saved in <root>/results.
   
 
 To generate a results.csv for the tested models, main.py -g True is called.
+  
+### Critical difference diagrams
+If you would like to generate such a diagram, take a look at [this code](https://github.com/hfawaz/cd-diagram)!
