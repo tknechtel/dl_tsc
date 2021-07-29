@@ -63,3 +63,17 @@ To generate a results.csv for the tested models, main.py -g True is called.
   
 ### Critical difference diagrams
 If you would like to generate such a diagram, take a look at [this code](https://github.com/hfawaz/cd-diagram)!
+  
+## References
+
+* [UCR/UEA archive](http://timeseriesclassification.com/TSC.zip)
+* [Rocket repository] (https://github.com/angus924/rocket)
+* [MiniRocket repository] (https://github.com/angus924/minirocket)
+* [MultiRocket repository] (https://github.com/ChangWeiTan/MultiRocket)
+* [InceptionTime repository] (https://github.com/hfawaz/InceptionTime/)
+* [dl_time_series_class repository] (https://github.com/JakobSpahn/dl_time_series_class)
+* [dl-4-tsc repository] (https://github.com/hfawaz/dl-4-tsc)
+  
+ 
+
+
