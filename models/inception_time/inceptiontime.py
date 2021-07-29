@@ -37,12 +37,13 @@ class Classifier_InceptionTime:
             print('Fitting network {0} out of {1}'.format(
                 it+1, self.num_ensemble_it))
             
+            start_time = time.time()
             inception.fit(x_train, y_train, x_val, y_val, y_true)
 
         #######################################
         ##Ensemble the individual classifiers##
         #######################################
-        start_time = time.time()
+        
 
         y_pred = np.zeros(shape=y_val.shape)
 

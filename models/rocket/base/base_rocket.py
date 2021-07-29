@@ -6,7 +6,8 @@ from tqdm.auto import trange
 from sklearn.utils.validation import check_is_fitted
 from sklearn.base import BaseEstimator, ClassifierMixin
 from sklearn.linear_model import RidgeClassifierCV
-
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import jaccard_score
 
 class Base_Classifier_ROCKET(BaseEstimator, ClassifierMixin):
     '''
@@ -27,6 +28,7 @@ class Base_Classifier_ROCKET(BaseEstimator, ClassifierMixin):
         if self.verbose:
             print('apply kernels')
         time_a = time.perf_counter()
+
         self.x_train_ = apply_kernels(x, self.kernels_)
         time_b = time.perf_counter()
         self.train_timings_ = [time_b - time_a]
@@ -75,7 +77,7 @@ class Base_Classifier_ROCKET(BaseEstimator, ClassifierMixin):
                 self.test_timings_ = [self.test_timings_[0]]
         except AttributeError:
             if self.verbose:
-                print('apply kernels')
+                print('apply kernels_again')
             time_a = time.perf_counter()
             self.x_test_ = apply_kernels(x, self.kernels_)
             time_b = time.perf_counter()
@@ -84,7 +86,10 @@ class Base_Classifier_ROCKET(BaseEstimator, ClassifierMixin):
         if self.verbose:
             print('test')
         time_a = time.perf_counter()
-        acc = self.ridge_cv_.score(self.x_test_, y)
+        y_pred = self.ridge_cv_.predict(self.x_test_)
+        y_true = y
+        #acc = self.ridge_cv_.score(self.x_test_, y)
+        acc = accuracy_score(y_true, y_pred)
         time_b = time.perf_counter()
         self.test_timings_.append(time_b - time_a)
 
