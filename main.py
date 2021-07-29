@@ -16,6 +16,7 @@ def fit_classifier():
     y_test = datasets_dict[dataset_name][3]
     
     nb_classes = len(np.unique(np.concatenate((y_train, y_test), axis=0)))
+    
     #print('Number of Classes: %s' % nb_classes)
     
     #one-hot-encoding
@@ -27,13 +28,14 @@ def fit_classifier():
     # save orignal y because later we will use binary
     y_true = np.argmax(y_test, axis=1) #See if this is really needed later
     
+
     if len(x_train.shape) == 2: #if univariate, check to see if this may make things harder later on
         #adds dimension making it multivariate with one dimension
         x_train = x_train.reshape((x_train.shape[0], x_train.shape[1], 1))
         x_test = x_test.reshape((x_test.shape[0], x_test.shape[1], 1))
         
     input_shape = x_train.shape[1:]
-    #print(x_train.shape)
+    print(x_train.shape)
     tune = True
     verbose = True
     classifier = create_classifier(classifier_name, input_shape, nb_classes, output_dir, tune, verbose)
@@ -53,6 +55,15 @@ def create_classifier(classifier_name, input_shape, nb_classes, output_dir, tune
     if classifier_name == 'rocket':
         from models.rocket import rocket
         return rocket.Classifier_ROCKET(output_dir, verbose)
+    if classifier_name == 'minirocket':
+        from models.mini_rocket import mini_rocket
+        return mini_rocket.Classifier_MINIROCKET(output_dir, verbose) 
+    if classifier_name == 'multirocket_default':
+        from models.MultiRocket import multirocket_n
+        return multirocket_n.Classifier_MULTIROCKET(output_dir, verbose)
+    if classifier_name == 'multirocket_best':
+        from models.MultiRocket import multirocket_best
+        return multirocket_best.Classifier_MULTIROCKET(output_dir, verbose)       
     if classifier_name == 'rocket_tf':
         from models.rocket import rocket_tf
         return rocket_tf.Classifier_ROCKET_TF(output_dir, verbose)
@@ -62,8 +73,12 @@ def create_classifier(classifier_name, input_shape, nb_classes, output_dir, tune
     if classifier_name == 'inception':
         from models.inception_time import inception
         return inception.Classifier_INCEPTION(output_dir, input_shape, nb_classes, verbose)
+    if classifier_name == 'resnet':
+        from models import resnet
+        return resnet.Classifier_RESNET(output_dir, input_shape, nb_classes, verbose)    
 
-root_dir = os.getcwd()
+#root_dir = os.getcwd()
+root_dir = '/content/drive/MyDrive/projektarbeit/source_code_with_UCR_datasets/sourc_code_with_UCR_datasets'
 print(root_dir)
 root_dir_copy = root_dir
 
@@ -99,6 +114,7 @@ else:
             tmp_output_dir = arguments.output_path + '/results/' + classifier_name + '/UCRArchive_2018/' + trr + '/'
 
             for dataset_name in arguments.dataset_names:
+                print('classifier_name', classifier_name)
                 print('\t\t\tdataset_name: ', dataset_name)
 
                 output_dir = tmp_output_dir + dataset_name + '/'
@@ -113,4 +129,5 @@ else:
 
                 # the creation of this directory means
                 create_directory(output_dir + '/DONE')
+
 
