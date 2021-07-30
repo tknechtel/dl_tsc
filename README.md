@@ -33,7 +33,7 @@ The code is divided as follows:
 
 ## Usage
 
-### [`main.py`](main.py)
+### [`main.py`](main.py) in [Colab](Colab%20notebooks/dl_tsc_notebook.ipynb)
 
 ```
 Arguments:
