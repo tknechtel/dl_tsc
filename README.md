@@ -24,6 +24,8 @@
 * tbb.
 
 ## Code
+* Link to [Colab Notebook](notebooks/dl_tsc_notebook.ipynb)
+
 The code is divided as follows: 
 * The [main.py](https://github.com/tknechtel/dl_tsc/blob/main/main.py) python file contains the necessary code to run an experiement. 
 * The [utils](https://github.com/tknechtel/dl_tsc/blob/main/utils) folder contains the necessary functions to read the datasets and visualize the plots.
