@@ -2,12 +2,12 @@ import os
 
 import sktime
 #Watch out, this is from old Version. New is sktime.utils.data_io
-#from sktime.utils.load_data import load_from_tsfile_to_dataframe 
-#from sktime.utils.data_container import from_nested_to_2d_array
+from sktime.utils.load_data import load_from_tsfile_to_dataframe 
+from sktime.utils.data_container import from_nested_to_2d_array
 
 #If sktime >= 0.5.3.
-from sktime.utils.data_io import load_from_tsfile_to_dataframe, load_from_arff_to_dataframe
-from sktime.utils.data_processing import from_nested_to_2d_array 
+#from sktime.utils.data_io import load_from_tsfile_to_dataframe, load_from_arff_to_dataframe
+#from sktime.utils.data_processing import from_nested_to_2d_array 
 
 import numpy as np
 import pandas as pd
