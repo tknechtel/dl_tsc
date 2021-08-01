@@ -77,8 +77,8 @@ def create_classifier(classifier_name, input_shape, nb_classes, output_dir, tune
         from models import resnet
         return resnet.Classifier_RESNET(output_dir, input_shape, nb_classes, verbose)    
 
-#root_dir = os.getcwd()
-root_dir = '/content/drive/MyDrive/projektarbeit/source_code_with_UCR_datasets/sourc_code_with_UCR_datasets'
+root_dir = os.getcwd()
+#root_dir = '/content/drive/MyDrive/projektarbeit/source_code_with_UCR_datasets/sourc_code_with_UCR_datasets'
 print(root_dir)
 root_dir_copy = root_dir
 
